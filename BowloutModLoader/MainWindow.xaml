@@ -1,0 +1,31 @@
+﻿<Window x:Name="Bowlout_Mod_Loader" x:Class="BowloutModLoader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BowloutModLoader"
+        mc:Ignorable="d"
+        Title="Bowlout Mod Loader" Height="450" Width="350
+        " ResizeMode="CanMinimize">
+    <Grid>
+        <TextBox x:Name="textBox" Grid.ColumnSpan="1" HorizontalAlignment="Left" Margin="10,150,0,0" Text="" VerticalAlignment="Top" Width="275" TextChanged="textBox_TextChanged" Background="White"/>
+        <Button x:Name="button" Content="Find" HorizontalAlignment="Right" Margin="0,150,10,0" VerticalAlignment="Top" Height="18" Width="40" Click="button_Click" FontFamily="Arial Black"/>
+        <Label x:Name="label" Content="Bowlout Game Folder" HorizontalAlignment="Left" Margin="4,129,0,0" VerticalAlignment="Top" Width="276" FontWeight="Bold"/>
+        <Image Source="/LOGO_1.png" x:Name="image" HorizontalAlignment="Left" Height="221" Margin="3,-37,0,0" VerticalAlignment="Top" Width="373" RenderTransformOrigin="0.5,0.5" IsHitTestVisible="False">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.499"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.436"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <StackPanel x:Name="Download_Succeeded_Panel" Margin="0,173,0,0">
+            <Label x:Name="InfoLabel1" Content="Mod Loader Found. Please select mods to install."/>
+            <ListView x:Name="modlist" Height="177" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="modList_SelectionChanged">
+            </ListView>
+            <Button x:Name="InstallButton" Content="Install" Click="button1_Click" Background="#FF00FF61"/>
+        </StackPanel>
+    </Grid>
+</Window>
