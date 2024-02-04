@@ -317,6 +317,7 @@ namespace BowloutModLoader
 
                 try
                 {
+                    Directory.CreateDirectory(path + @"\Mods\");
                     foreach(string finalMod in finalMods)
                     {
                         File.Copy(finalMod, path + @"\Mods\" + Path.GetFileName(finalMod), true);
